@@ -1,4 +1,5 @@
 import React from 'react';
+import { Badge } from 'reactstrap';
 import {
   CategoryList,
   CategoryItem,
@@ -13,8 +14,10 @@ export const ListCategory = (props) => {
       <CategoryList>
         {list.map((item, id) => (
           <CategoryItem to="/" key={id}>
-            <CategoryIcon className={item.iconName} />
+            {item.iconName && <CategoryIcon className={item.iconName} />}
+            {item.imgName && <img src={item.imgName} alt="" />}
             <TitleItem>{item.itemName}</TitleItem>
+            {item.noti && <Badge>{item.noti}</Badge>}
           </CategoryItem>
         ))}
       </CategoryList>

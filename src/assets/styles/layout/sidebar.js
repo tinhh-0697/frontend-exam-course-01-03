@@ -27,7 +27,6 @@ export const HeaderTitle = styled.h4`
   width: 90px;
   margin-top: 27px;
   color: #ffffff;
-  font-family: 'Rubik', sans-serif;
   font-size: 25px;
   font-weight: 500;
 `;
@@ -39,7 +38,6 @@ export const HeaderCategory = styled.div`
 export const CategoryTitle = styled.h5`
   margin: 50px 0 21px 35px;
   color: #bcbfc4;
-  font-family: 'Rubik', sans-serif;
   font-size: 18px;
 `;
 
@@ -52,13 +50,26 @@ export const CategoryList = styled.ul`
 export const CategoryItem = styled(Link)`
   display: flex;
   justify-content: flex-start;
-  align-items: baseline;
+  align-items: center;
+  margin-bottom: 13px;
   color: #757d89;
-  font-family: 'Rubik', sans-serif;
   text-decoration: none;
   font-size: 18px;
   line-height: 45px;
-  margin-bottom: 13px;
+
+  :hover {
+    color: #757d89;
+    text-decoration: none;
+  }
+
+  .badge-secondary {
+    margin-left: auto;
+    margin-right: 31px;
+    padding: 7px 21px;
+    background-color: #38c6da;
+    font-size: 18px;
+    border-radius: 20px;
+  }
 `;
 
 export const TitleItem = styled.span`

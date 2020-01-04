@@ -10,22 +10,28 @@ import {
   CategoryTitle,
 } from '../../assets/styles/layout/sidebar';
 import { ListCategory } from './ListCategory';
+import IconDashboard from '../../assets/images/1.png';
+import IconHome from '../../assets/images/2.png';
+import IconWidgets from '../../assets/images/3.png';
+import IconCharts from '../../assets/images/5.png';
+import IconBlog from '../../assets/images/4-2.png';
+import IconEcommerce from '../../assets/images/5-2.png';
 
 const listCategory1 = [
-  { iconName: 'fa fa-tachometer', itemName: 'Dashboard' },
-  { iconName: 'fa fa-home', itemName: 'Home' },
-  { iconName: 'fa fa-puzzle-piece', itemName: 'Widgets' },
+  { imgName: IconDashboard, itemName: 'Dashboard', noti: 2 },
+  { imgName: IconHome, itemName: 'Home' },
+  { imgName: IconWidgets, itemName: 'Widgets' },
   { iconName: 'fa fa-th', itemName: 'Elements' },
   { iconName: 'fa fa-file-text', itemName: 'Forms' },
-  { iconName: 'fa fa-pie-chart', itemName: 'Charts' },
+  { imgName: IconCharts, itemName: 'Charts' },
 ];
 
 const listCategory2 = [
-  { iconName: 'fa fa-tachometer', itemName: 'Tables' },
-  { iconName: 'fa fa-home', itemName: 'Maps' },
-  { iconName: 'fa fa-puzzle-piece', itemName: 'Pages' },
-  { iconName: 'fa fa-th', itemName: 'Blog' },
-  { iconName: 'fa fa-file-text', itemName: 'E-commerce' },
+  { iconName: 'fa fa-table', itemName: 'Tables' },
+  { iconName: 'fa fa-globe', itemName: 'Maps' },
+  { iconName: 'fa fa-file', itemName: 'Pages' },
+  { imgName: IconBlog, itemName: 'Blog' },
+  { imgName: IconEcommerce, itemName: 'E-commerce' },
 ];
 
 export const Sidebar = () => {

@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <HeaderSearch>
       <HeaderForm>
-        <i class="fa fa-search" />
+        <button className="fa fa-search"></button>
         <input placeholder="Search now..." />
       </HeaderForm>
       <HeaderSetting>
