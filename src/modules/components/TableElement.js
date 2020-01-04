@@ -1,0 +1,34 @@
+import React, { useState, useEffect } from 'react';
+import { Table } from 'reactstrap';
+import firebase from '../../firebase';
+import { ArticleItem } from './ArticleItem';
+
+export const TableElement = () => {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const db = firebase.firestore();
+      const data = await db.collection('articles').get();
+      setArticles(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    fetchData();
+  }, []);
+  return (
+    <Table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Views</th>
+          <th>Status</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        {articles.map((article, index) => (
+          <ArticleItem key={index} article={article} />
+        ))}
+      </tbody>
+    </Table>
+  );
+};
