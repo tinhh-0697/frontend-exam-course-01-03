@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const ElementsSection = styled.section`
-  height: 100vh;
+  height: 100%;
   padding-top: 29px;
   background-color: #f1f3f5;
 
   .element__table {
     background-color: #fff;
     margin: 0 29px;
-    padding-bottom: 40px;
+    padding-bottom: 17px;
     border-radius: 10px;
 
     table {
@@ -33,8 +33,8 @@ export const ElementsSection = styled.section`
             }
 
             :nth-child(2) {
-              /* width: 380px; */
-              width: 480px;
+              width: 380px;
+              /* width: 480px; */
             }
 
             :nth-child(3) {
@@ -47,10 +47,17 @@ export const ElementsSection = styled.section`
       tbody {
         tr:nth-of-type(even) {
           background-color: #f7f8f9;
+
+          td {
+            padding-top: 24px;
+            padding-bottom: 13px;
+          }
         }
 
         td {
           padding: 28px;
+          padding-top: 30px;
+          padding-bottom: 18px;
 
           :nth-child(1) {
             padding-left: 72px;

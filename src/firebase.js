@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: 'AIzaSyDHvo45SbABBh6poHpoKhwZK_xfFf9IRPo',
   authDomain: 'fir-react-final-course.firebaseapp.com',
   databaseURL: 'https://fir-react-final-course.firebaseio.com',
