@@ -7,13 +7,15 @@ export const TableElement = () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const db = firebase.firestore();
-      const data = await db.collection('articles').get();
-      setArticles(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    fetchData();
+    const db = firebase.firestore();
+
+    return db.collection('articles').onSnapshot((snapshot) => {
+      const articlesData = [];
+      snapshot.forEach((doc) => articlesData.push({ ...doc.data(), id: doc.id }));
+      setArticles(articlesData);
+    });
   }, []);
+
   return (
     <Table>
       <thead>

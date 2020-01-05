@@ -28,7 +28,15 @@ export const ArticleItem = (props) => {
         <Button color="success" onClick={toggle}>
           Edit
         </Button>
-        <ModalButton id={article.id} modalParent={modal} toggle={toggle} title="Edit Item" />
+        <ModalButton
+          id={article.id}
+          nameTemp={article.name}
+          viewsTemp={article.views}
+          statusTemp={article.status}
+          modalParent={modal}
+          toggle={toggle}
+          title="Edit Item"
+        />
         <Button color="danger" onClick={onDelete}>
           Delete
         </Button>
