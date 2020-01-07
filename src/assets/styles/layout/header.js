@@ -33,8 +33,50 @@ export const HeaderForm = styled.div`
 `;
 
 export const HeaderSetting = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
+
+  .header-btn-setting {
+    margin-right: 30px;
+    background-color: transparent;
+    cursor: pointer;
+
+    :before {
+      content: '';
+      display: none;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 200px;
+      height: 34px;
+      background-color: transparent;
+      transform: translateX(-20%);
+    }
+
+    :hover:before {
+      display: block;
+    }
+
+    :hover .header-wrap-logout {
+      display: block;
+    }
+  }
+
+  .header-wrap-logout {
+    position: absolute;
+    left: -50%;
+    bottom: -50%;
+    transform: translate(25%, 40%);
+    display: none;
+    padding: 20px 20px;
+    background-color: #fff;
+    border: 1px solid #000;
+
+    button {
+      width: 100%;
+    }
+  }
 
   .title {
     display: inline-block;
@@ -45,7 +87,6 @@ export const HeaderSetting = styled.div`
   }
 
   i {
-    margin-right: 30px;
     color: #d5d8db;
     font-size: 30px !important;
   }

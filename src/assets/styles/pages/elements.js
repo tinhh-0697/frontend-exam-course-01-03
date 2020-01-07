@@ -40,6 +40,10 @@ export const ElementsSection = styled.section`
             :nth-child(3) {
               width: 215px;
             }
+
+            :nth-child(4) {
+              padding-left: 77px;
+            }
           }
         }
       }
@@ -84,7 +88,7 @@ export const ElementsSection = styled.section`
           }
 
           .btn-success {
-            margin-right: 3px;
+            margin-right: 11px;
             background-color: #6ad36e;
           }
 
