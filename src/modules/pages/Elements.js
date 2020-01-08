@@ -16,7 +16,7 @@ export const Elements = () => {
           <Button color="primary" onClick={toggle}>
             Add New +
           </Button>
-          <ModalButton check={true} modalParent={modal} toggle={toggle} title="Add New Item" />
+          <ModalButton modalParent={modal} toggle={toggle} title="Add New Item" />
         </div>
         <TableElement />
       </div>

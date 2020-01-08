@@ -33,16 +33,17 @@ export const ElementsSection = styled.section`
             }
 
             :nth-child(2) {
-              width: 380px;
+              width: 313px;
               /* width: 480px; */
             }
 
             :nth-child(3) {
-              width: 215px;
+              width: 244px;
+              text-align: center;
             }
 
             :nth-child(4) {
-              padding-left: 77px;
+              text-align: center;
             }
           }
         }
@@ -68,6 +69,19 @@ export const ElementsSection = styled.section`
             color: #a0a0a0;
           }
 
+          :nth-child(2) {
+            display: inline-block;
+            width: 120px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          :nth-child(3),
+          :nth-child(4) {
+            text-align: center;
+          }
+
           .name-element {
             display: inline-block;
             width: 215px;
@@ -77,8 +91,9 @@ export const ElementsSection = styled.section`
           }
 
           .btn {
+            width: 83px;
+            height: 37px;
             font-size: 15px;
-            padding: 8px 27px;
             border: 0;
 
             :focus,
@@ -121,6 +136,67 @@ export const ElementsSection = styled.section`
     .btn-primary:not(:disabled):not(.disabled):active {
       background-color: #38c6da;
       opacity: 0.8;
+    }
+  }
+`;
+
+export const ModalRadio = styled.div`
+  margin-left: 10px;
+
+  .modal-label__first {
+    margin-right: 20px;
+  }
+
+  input {
+    margin-right: 5px;
+    vertical-align: text-top;
+  }
+`;
+
+export const ModalInput = styled.div`
+  position: relative;
+  margin: 0px 3px 30px;
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    font-size: 1rem;
+    color: #757575;
+    cursor: text;
+    pointer-events: none;
+    transform: translateY(50%);
+    transition: transform 0.2s ease-out, color 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  }
+
+  input {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    outline: 0;
+    box-shadow: 0;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    :focus {
+      border-bottom: 1px solid #38c6da;
+      box-shadow: 0 1px 0 0 #38c6da;
+    }
+
+    :focus + label,
+    :valid + label {
+      left: 5px;
+      color: #38c6da;
+      font-weight: 300;
+      font-size: 1rem;
+      transform: translate(-8px, -14px) scale(0.8);
+    }
+
+    :focus + .form-email,
+    :valid + .form-email {
+      left: 8px;
     }
   }
 `;

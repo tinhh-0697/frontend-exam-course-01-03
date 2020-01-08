@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button } from 'reactstrap';
 import { ModalButton } from './ModalButton';
 import firebase from '../../firebase';
+import Check from '../../assets/images/check.png';
+import Uncheck from '../../assets/images/uncheck.png';
 
 export const ArticleItem = (props) => {
   const { article } = props;
@@ -23,7 +25,7 @@ export const ArticleItem = (props) => {
         <span className="name-element">{article.name}</span>
       </td>
       <td>{article.views}</td>
-      <td>{article.status}</td>
+      <td>{article.status ? <img src={Check} alt="" /> : <img src={Uncheck} alt="" />}</td>
       <td>
         <Button color="success" onClick={toggle}>
           Edit

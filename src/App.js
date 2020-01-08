@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Layout } from './modules/layout/Layout';
 import { Elements } from './modules/pages/Elements';
-import Login from './modules/pages/Login';
+import { FormLogin } from './modules/pages/FormLogin';
 import { AuthProvider } from './Auth';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <AuthProvider>
       <Router>
         <Switch>
-          <Route exact path="/" component={Login} />
+          <Route exact path="/" component={FormLogin} />
           <Layout>
             <Route path="/elements" component={Elements} />
           </Layout>

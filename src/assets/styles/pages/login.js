@@ -35,7 +35,7 @@ export const LoginSection = styled.section`
     width: 100%;
     padding: 30px;
 
-    a {
+    .login-section__forgot {
       display: inline-block;
       width: 100%;
       margin-top: 20px;
@@ -45,6 +45,19 @@ export const LoginSection = styled.section`
       :hover {
         opacity: 0.6;
         text-decoration: none;
+      }
+    }
+
+    .login-section__register {
+      text-align: end;
+
+      a {
+        color: #38c6da;
+
+        :hover {
+          opacity: 0.6;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -92,6 +105,13 @@ export const LoginSection = styled.section`
       :valid + .form-email {
         left: 8px;
       }
+    }
+
+    .text-error {
+      display: inline-block;
+      margin-top: 10px;
+      margin-left: 5px;
+      color: red;
     }
   }
 

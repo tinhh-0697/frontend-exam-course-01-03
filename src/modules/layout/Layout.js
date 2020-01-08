@@ -1,15 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Wrapper from './Wrapper';
 import withLoadLayout from './withLoadLayout';
 import { Redirect } from 'react-router-dom';
-import { AuthContext } from '../../Auth';
+import { CHECK_LOGIN } from '../variable/LocalStorage';
 
 const ActiceWithLoadLayout = withLoadLayout(Wrapper);
 
 export const Layout = (props) => {
-  const { currentUser } = useContext(AuthContext);
-
-  return currentUser ? (
+  return localStorage.getItem(CHECK_LOGIN) ? (
     <ActiceWithLoadLayout>{props.children}</ActiceWithLoadLayout>
   ) : (
     <Redirect to="/" />
