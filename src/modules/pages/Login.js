@@ -1,6 +1,14 @@
 import React, { useContext } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import { LoginSection } from '../../assets/styles/pages/login';
+import { Redirect } from 'react-router-dom';
+import {
+  LoginSection,
+  LoginInput,
+  TextError,
+  ButtonLogin,
+  LoginTitle,
+  LoginForm,
+  LoginWrap,
+} from '../../assets/styles/pages/login';
 import { CHECK_LOGIN } from '../variable/LocalStorage';
 import { AuthContext } from '../../Auth';
 import firebase from '../../firebase';
@@ -13,7 +21,7 @@ const Login = (props) => {
 
     try {
       await firebase.auth().signInWithEmailAndPassword(email.value, password.value);
-      history.push('/elements');
+      history.push('/');
     } catch (error) {
       alert(error);
     }
@@ -22,23 +30,23 @@ const Login = (props) => {
   const { currentUser } = useContext(AuthContext);
 
   // If login before, you don't need render Login page
-  if (localStorage.getItem(CHECK_LOGIN)) return <Redirect to="/elements" />;
+  if (localStorage.getItem(CHECK_LOGIN)) return <Redirect to="/" />;
 
   // If don't login yet, you will render Login page
   if (currentUser) {
     localStorage.setItem(CHECK_LOGIN, true); // Check another link have login in Layout
-    return <Redirect to="/elements" />;
+    return <Redirect to="/" />;
   }
 
   return (
     <LoginSection>
-      <div className="login-section__wrap col-md-6 col-lg-5">
-        <div className="login-section__form">
-          <div className="login-section__title text-center">
+      <LoginWrap md={6} lg={5}>
+        <LoginForm>
+          <LoginTitle>
             <h1>Login</h1>
-          </div>
+          </LoginTitle>
           <form onSubmit={handleLogin}>
-            <div className="login-section__input">
+            <LoginInput>
               <input
                 type="text"
                 name="email"
@@ -49,9 +57,9 @@ const Login = (props) => {
                 onChange={props.handleChange}
               />
               <label className="form-email">Email</label>
-              <span className="text-error">{props.errors.email}</span>
-            </div>
-            <div className="login-section__input">
+              <TextError>{props.errors.email}</TextError>
+            </LoginInput>
+            <LoginInput>
               <input
                 type="password"
                 name="password"
@@ -62,20 +70,14 @@ const Login = (props) => {
                 onChange={props.handleChange}
               />
               <label>Password</label>
-              <span className="text-error">{props.errors.password}</span>
-            </div>
-            <div className="login-section__button">
-              <button type="submit" className="btn btn-success">
-                Sign In
-              </button>
-            </div>
-            <p className="login-section__register">
-              You don't have account &nbsp;
-              <Link to="/register">Register</Link>
-            </p>
+              <TextError>{props.errors.password}</TextError>
+            </LoginInput>
+            <ButtonLogin color="success" type="submit">
+              Sign In
+            </ButtonLogin>
           </form>
-        </div>
-      </div>
+        </LoginForm>
+      </LoginWrap>
     </LoginSection>
   );
 };

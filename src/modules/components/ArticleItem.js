@@ -19,12 +19,16 @@ export const ArticleItem = (props) => {
     }
   };
 
+  const numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
+
   return (
     <tr>
       <td>
         <span className="name-element">{article.name}</span>
       </td>
-      <td>{article.views}</td>
+      <td>{numberWithCommas(article.views)}</td>
       <td>{article.status ? <img src={Check} alt="" /> : <img src={Uncheck} alt="" />}</td>
       <td>
         <Button color="success" onClick={toggle}>

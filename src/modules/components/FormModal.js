@@ -3,10 +3,10 @@ import * as Yup from 'yup';
 import { InputName } from './InputName';
 
 export const FormModal = withFormik({
-  mapPropsToValues() {
+  mapPropsToValues({ name }) {
     // Init form field
     return {
-      name: '',
+      name,
     };
   },
   validationSchema: Yup.object().shape({

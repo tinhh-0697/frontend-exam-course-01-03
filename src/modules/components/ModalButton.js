@@ -18,16 +18,19 @@ export const ModalButton = (props) => {
 
   const onExec = () => {
     const db = firebase.firestore();
-    if (id) {
-      // Edit
-      db.collection('articles')
-        .doc(id)
-        .set({ name, views: parseInt(views), status });
-    } else {
-      // Add
-      db.collection('articles').add({ name, views: parseInt(views), status });
+
+    if (name && views && status !== null) {
+      if (id) {
+        // Edit
+        db.collection('articles')
+          .doc(id)
+          .set({ name, views: parseInt(views), status });
+      } else {
+        // Add
+        db.collection('articles').add({ name, views: parseInt(views), status });
+      }
+      toggle();
     }
-    toggle();
   };
 
   const onChooseStatus = (e) => {
@@ -39,7 +42,7 @@ export const ModalButton = (props) => {
     <Modal isOpen={modalParent} toggle={toggle} className={className}>
       <ModalHeader toggle={toggle}>{title}</ModalHeader>
       <ModalBody>
-        <FormModal nameTemp={nameTemp} setName={setName} />
+        <FormModal name={nameTemp} setName={setName} />
         <ModalInput>
           <input
             type="number"

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
-import { ElementsSection } from '../../assets/styles/pages/elements';
+import { ElementsSection, ElementTable, ElementTools } from '../../assets/styles/pages/elements';
 import { TableElement } from '../components/TableElement';
 import { ModalButton } from '../components/ModalButton';
 
@@ -10,16 +10,16 @@ export const Elements = () => {
 
   return (
     <ElementsSection>
-      <div className="element__table">
-        <div className="element__tools">
+      <ElementTable>
+        <ElementTools>
           <h5>Articles</h5>
           <Button color="primary" onClick={toggle}>
             Add New +
           </Button>
           <ModalButton modalParent={modal} toggle={toggle} title="Add New Item" />
-        </div>
+        </ElementTools>
         <TableElement />
-      </div>
+      </ElementTable>
     </ElementsSection>
   );
 };
