@@ -17,7 +17,7 @@ export const TableElement = () => {
   }, []);
 
   return (
-    <TableInfo>
+    <TableInfo responsive>
       <thead>
         <tr>
           <th>Name</th>

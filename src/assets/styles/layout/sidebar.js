@@ -4,6 +4,20 @@ import { NavLink } from 'react-router-dom';
 export const SideBar = styled.section`
   display: flex;
   flex-direction: column;
+  transition: all 200ms;
+`;
+
+export const SideBarContent = styled.div`
+  position: relative;
+  z-index: 15;
+  background-color: #fff;
+  transition: all 300ms;
+
+  @media (max-width: 1120px) {
+    pointer-events: ${(props) => (props.appead ? 'all' : 'none')};
+    opacity: ${(props) => (props.appead ? '1' : '0')};
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
 `;
 
 export const HeaderLogo = styled.div`
@@ -11,10 +25,21 @@ export const HeaderLogo = styled.div`
   width: 350px;
   height: 82px;
   background-color: #38c6da;
+
+  @media (max-width: 1120px) {
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
 `;
 
 export const HeaderThumbnail = styled.div`
   margin: 15px 18px 11px 34px;
+
+  @media (max-width: 1120px) {
+    margin: 0;
+    margin-right: 15px;
+  }
 `;
 
 export const HeaderImgLogo = styled.img`
@@ -23,12 +48,15 @@ export const HeaderImgLogo = styled.img`
 
 export const HeaderTitle = styled.h4`
   display: inline-block;
-  height: 17px;
-  width: 90px;
   margin-top: 27px;
   color: #ffffff;
   font-size: 25px;
   font-weight: 500;
+
+  @media (max-width: 1120px) {
+    margin: 0;
+    font-size: 18px;
+  }
 `;
 
 export const HeaderCategory = styled.div`
@@ -39,12 +67,22 @@ export const CategoryTitle = styled.h5`
   margin: 50px 0 21px 35px;
   color: #bcbfc4;
   font-size: 18px;
+
+  @media (max-width: 1120px) {
+    margin: 30px 0 21px 25px;
+    font-size: 16px;
+  }
 `;
 
 export const CategoryList = styled.ul`
   padding-top: 20px;
   border-top: 1px solid #eaeced;
   list-style: none;
+
+  @media (max-width: 1120px) {
+    position: relative;
+    left: -16px;
+  }
 `;
 
 export const CategoryItem = styled(NavLink)`
@@ -71,10 +109,14 @@ export const CategoryItem = styled(NavLink)`
       height: 45px;
       background-color: #38c6da;
       transform: translateX(-40px);
+
+      @media (max-width: 1120px) {
+        transform: translateX(-24px);
+      }
     }
 
     > .icon {
-      filter: invert(80%) sepia(9%) saturate(3658%) hue-rotate(146deg) brightness(88%) contrast(92%);
+      fill: #38c6da;
     }
   }
 
@@ -83,7 +125,7 @@ export const CategoryItem = styled(NavLink)`
     text-decoration: none;
 
     > .icon {
-      filter: invert(80%) sepia(9%) saturate(3658%) hue-rotate(146deg) brightness(88%) contrast(92%);
+      fill: #38c6da;
     }
   }
 
@@ -94,26 +136,20 @@ export const CategoryItem = styled(NavLink)`
     background-color: #38c6da;
     font-size: 18px;
     border-radius: 20px;
+
+    @media (max-width: 1120px) {
+      margin-left: 65px;
+      margin-right: 0;
+      font-size: 12px;
+    }
   }
 `;
 
 export const TitleItem = styled.span`
   padding-left: 26px;
-`;
 
-export const CategoryIcon = styled.span`
-  display: inline-block;
-  width: 24px;
-  color: #d5d8db;
-  font-size: 30px !important;
-`;
-
-export const CategoryIconPuzzle = styled(CategoryIcon)`
-  transform: rotateZ(-45deg);
-`;
-
-export const IconSvg = styled.img`
-  width: 25px;
-  height: 25px;
-  filter: invert(90%) sepia(20%) saturate(26%) hue-rotate(169deg) brightness(94%) contrast(91%);
+  @media (max-width: 1120px) {
+    padding-left: 14px;
+    font-size: 14px;
+  }
 `;
