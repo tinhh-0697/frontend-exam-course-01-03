@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Table } from 'reactstrap';
 import firebase from '../../firebase';
 import { ArticleItem } from './ArticleItem';
+import { TableInfo } from '../../assets/styles/components/TableInfo';
 
 export const TableElement = () => {
   const [articles, setArticles] = useState([]);
@@ -17,7 +17,7 @@ export const TableElement = () => {
   }, []);
 
   return (
-    <Table>
+    <TableInfo>
       <thead>
         <tr>
           <th>Name</th>
@@ -31,6 +31,6 @@ export const TableElement = () => {
           <ArticleItem key={index} article={article} />
         ))}
       </tbody>
-    </Table>
+    </TableInfo>
   );
 };

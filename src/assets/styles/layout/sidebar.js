@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const SideBar = styled.section`
   display: flex;
@@ -47,7 +47,7 @@ export const CategoryList = styled.ul`
   list-style: none;
 `;
 
-export const CategoryItem = styled(Link)`
+export const CategoryItem = styled(NavLink)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -57,9 +57,34 @@ export const CategoryItem = styled(Link)`
   font-size: 18px;
   line-height: 45px;
 
+  &.active {
+    position: relative;
+    color: #38c6da;
+
+    :before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      height: 45px;
+      background-color: #38c6da;
+      transform: translateX(-40px);
+    }
+
+    > .icon {
+      filter: invert(80%) sepia(9%) saturate(3658%) hue-rotate(146deg) brightness(88%) contrast(92%);
+    }
+  }
+
   :hover {
-    color: #757d89;
+    color: #38c6da;
     text-decoration: none;
+
+    > .icon {
+      filter: invert(80%) sepia(9%) saturate(3658%) hue-rotate(146deg) brightness(88%) contrast(92%);
+    }
   }
 
   .badge-secondary {
@@ -85,4 +110,10 @@ export const CategoryIcon = styled.span`
 
 export const CategoryIconPuzzle = styled(CategoryIcon)`
   transform: rotateZ(-45deg);
+`;
+
+export const IconSvg = styled.img`
+  width: 25px;
+  height: 25px;
+  filter: invert(90%) sepia(20%) saturate(26%) hue-rotate(169deg) brightness(94%) contrast(91%);
 `;

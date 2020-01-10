@@ -65,16 +65,19 @@ export const HeaderSetting = styled.div`
 
   .header-wrap-logout {
     position: absolute;
-    left: -50%;
-    bottom: -50%;
+    left: -85%;
+    bottom: -65%;
     transform: translate(25%, 40%);
     display: none;
     padding: 20px 20px;
     background-color: #fff;
-    border: 1px solid #000;
+    font-family: 'Lexend Exa', sans-serif;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
     button {
       width: 100%;
+      margin-top: 10px;
+      font-family: 'Abril Fatface', cursive;
     }
   }
 
