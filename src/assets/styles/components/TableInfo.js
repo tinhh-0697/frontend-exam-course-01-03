@@ -51,13 +51,16 @@ export const TableInfo = styled(Table)`
       padding-bottom: 18px;
       border: 0;
 
+      @media (max-width: 1120px) {
+        vertical-align: middle;
+      }
+
       :nth-child(1) {
         padding-left: 72px;
         color: #a0a0a0;
       }
 
       :nth-child(2) {
-        display: inline-block;
         width: 120px;
         white-space: nowrap;
         overflow: hidden;
@@ -92,6 +95,11 @@ export const TableInfo = styled(Table)`
       .btn-success {
         margin-right: 11px;
         background-color: #6ad36e;
+
+        @media (max-width: 1594px) {
+          margin-right: 0;
+          /* margin-bottom: 5px; */
+        }
       }
 
       .btn-danger {

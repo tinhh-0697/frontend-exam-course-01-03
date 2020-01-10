@@ -1,10 +1,19 @@
-import React from 'react';
-import { HeaderSearch, HeaderSetting, HeaderForm } from '../../assets/styles/layout/header';
+import React, { useContext } from 'react';
+import {
+  HeaderSearch,
+  HeaderSetting,
+  HeaderForm,
+  ButtonResponsive,
+  ControlButtonResponsive,
+} from '../../assets/styles/layout/header';
 import firebase from '../../firebase';
 import { CHECK_LOGIN } from '../variable/LocalStorage';
 import { withRouter, Redirect } from 'react-router-dom';
+import { ToggleContext } from '../layout/ToggleSidebar';
 
 const Header = (props) => {
+  const { appead } = useContext(ToggleContext);
+  const { toggle } = useContext(ToggleContext);
   const handerLogout = () => {
     firebase
       .auth()
@@ -12,7 +21,7 @@ const Header = (props) => {
       .then(function() {
         console.log('Sign out');
         localStorage.removeItem(CHECK_LOGIN);
-        return <Redirect to="/" />;
+        return <Redirect to="/login" />;
       })
       .catch(function(error) {
         console.log(error);
@@ -21,6 +30,9 @@ const Header = (props) => {
 
   return (
     <HeaderSearch>
+      <ControlButtonResponsive onClick={toggle}>
+        <ButtonResponsive className={appead ? 'active' : ''} />
+      </ControlButtonResponsive>
       <HeaderForm>
         <button className="fa fa-search"></button>
         <input placeholder="Search now..." />
