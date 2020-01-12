@@ -24,6 +24,9 @@ import {
   IconEcommerce,
 } from './Icons';
 import { ToggleContext } from '../layout/ToggleSidebar';
+import { Search } from './Search';
+import { DropdownLogout } from './DropdownLogout';
+import { HeaderSetting } from '../../assets/styles/layout/header';
 
 const listCategory1 = [
   { icon: IconDashboard, itemName: 'Dashboard', noti: 2, link: '/dashboard' },
@@ -44,6 +47,8 @@ const listCategory2 = [
 
 export const Sidebar = () => {
   const { appead } = useContext(ToggleContext);
+
+  const handerLogout = () => {};
   return (
     <SideBar>
       <HeaderLogo appead={appead}>
@@ -53,6 +58,15 @@ export const Sidebar = () => {
         <HeaderTitle>ORBITA</HeaderTitle>
       </HeaderLogo>
       <SideBarContent appead={appead}>
+        <HeaderSetting checkSidebar={false}>
+          <h4 className="title">Katie Reed</h4>
+          <div className="header-btn-setting">
+            <i className="fa fa-cog" />
+
+            <DropdownLogout handerLogout={handerLogout} />
+          </div>
+        </HeaderSetting>
+        <Search siderbar={true} />
         <HeaderCategory>
           <CategoryTitle>CATEGORY 1</CategoryTitle>
           <ListCategory list={listCategory1} />

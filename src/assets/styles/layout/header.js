@@ -7,13 +7,13 @@ export const HeaderSearch = styled.div`
   box-shadow: 0 0 54px rgba(0, 0, 0, 0.09);
   transition: background-color 200ms;
 
-  @media (max-width: 1120px) {
+  @media (max-width: 1140px) {
     background-color: #38c6da;
   }
 `;
 
 export const ButtonResponsive = styled.span`
-  @media (max-width: 1120px) {
+  @media (max-width: 1140px) {
     position: absolute;
     width: 24px;
     height: 3px;
@@ -58,7 +58,7 @@ export const ButtonResponsive = styled.span`
 export const ControlButtonResponsive = styled.button`
   display: none;
 
-  @media (max-width: 1120px) {
+  @media (max-width: 1140px) {
     display: inline-block;
     position: relative;
     top: 20%;
@@ -77,17 +77,24 @@ export const ControlButtonResponsive = styled.button`
 `;
 
 export const HeaderForm = styled.div`
+  display: ${(props) => (props.sidebar ? 'block' : 'none')};
   margin: 21px 0 25px 30px;
 
-  @media (max-width: 1120px) {
-    visibility: hidden;
+  @media (max-width: 1140px) {
+    display: block;
+    display: ${(props) => (props.sidebar ? 'none' : 'block')};
+    margin: 25px 0 15px 15px;
   }
 
   button {
     color: #b8b8b8;
     background-color: transparent;
-    font-size: 30px !important;
+    font-size: 30px;
     border: 0;
+
+    @media (max-width: 1140px) {
+      font-size: 14px;
+    }
   }
 
   input {
@@ -101,14 +108,25 @@ export const HeaderForm = styled.div`
     :active {
       outline: 0;
     }
+
+    @media (max-width: 1140px) {
+      margin-left: 10px;
+      vertical-align: middle;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
   }
 `;
 
 export const HeaderSetting = styled.div`
   position: relative;
-  display: flex;
+  display: ${(props) => (props.checkSidebar ? 'flex' : 'none')};
   align-items: center;
   margin-left: auto;
+
+  @media (max-width: 530px) {
+    display: ${(props) => (props.checkSidebar ? 'none' : 'block')};
+  }
 
   .header-btn-setting {
     margin-right: 30px;
@@ -138,17 +156,17 @@ export const HeaderSetting = styled.div`
 
   .header-wrap-logout {
     position: absolute;
-    left: -85%;
+    left: -50%;
     bottom: -65%;
     z-index: 15;
     transform: translate(25%, 40%);
     display: none;
     padding: 20px 20px;
     background-color: #fff;
-    font-family: 'Lexend Exa', sans-serif;
+    font-family: 'Gelasio', serif;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1140px) {
       transform: translate(13%, 40%);
     }
 
@@ -167,7 +185,7 @@ export const HeaderSetting = styled.div`
     font-size: 20px;
     white-space: nowrap;
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1140px) {
       margin-right: 7px;
       color: #fff;
     }
@@ -177,7 +195,7 @@ export const HeaderSetting = styled.div`
     color: #d5d8db;
     font-size: 30px !important;
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1140px) {
       color: #fff;
     }
   }

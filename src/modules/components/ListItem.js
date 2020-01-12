@@ -10,7 +10,7 @@ export const ListItem = (props) => {
     height: 25px;
     fill: #d5d8db;
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1140px) {
       width: 20px;
       height: 20px;
     }

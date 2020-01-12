@@ -51,7 +51,7 @@ export const TableInfo = styled(Table)`
       padding-bottom: 18px;
       border: 0;
 
-      @media (max-width: 1120px) {
+      @media (max-width: 1140px) {
         vertical-align: middle;
       }
 
