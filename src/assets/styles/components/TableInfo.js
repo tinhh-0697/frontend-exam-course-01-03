@@ -6,11 +6,11 @@ export const TableInfo = styled(Table)`
 
   thead {
     tr {
-      border-bottom: 1px solid #eaeced;
+      border-bottom: 1px solid ${({ theme }) => theme.borderTopTable};
 
       th {
         padding: 28px;
-        color: #555555;
+        color: ${({ theme }) => theme.tableHead};
         border: 0;
 
         :nth-child(1) {
@@ -37,12 +37,16 @@ export const TableInfo = styled(Table)`
 
   tbody {
     tr:nth-of-type(even) {
-      background-color: #f7f8f9;
+      background-color: ${({ theme }) => theme.tableRowEven};
 
       td {
         padding-top: 24px;
         padding-bottom: 13px;
       }
+    }
+
+    tr:nth-of-type(odd) {
+      background-color: ${({ theme }) => theme.tableRowOdd};
     }
 
     td {
@@ -62,6 +66,7 @@ export const TableInfo = styled(Table)`
 
       :nth-child(2) {
         width: 120px;
+        color: ${({ theme }) => theme.tableColumnView};
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;

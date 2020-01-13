@@ -4,30 +4,23 @@ import {
   HeaderSetting,
   ButtonResponsive,
   ControlButtonResponsive,
+  ButtonSwitchTheme,
+  HeaderControl,
 } from '../../assets/styles/layout/header';
-import firebase from '../../firebase';
-import { CHECK_LOGIN } from '../variable/LocalStorage';
-import { withRouter, Redirect } from 'react-router-dom';
+
+import { withRouter } from 'react-router-dom';
 import { ToggleContext } from '../layout/ToggleSidebar';
 import { Search } from './Search';
 import { DropdownLogout } from './DropdownLogout';
+import { ReactComponent as MoonIcon } from '../../assets/images/moon.svg';
+import { ReactComponent as SunIcon } from '../../assets/images/sun.svg';
 
 const Header = (props) => {
-  const { appead } = useContext(ToggleContext);
-  const { toggle } = useContext(ToggleContext);
-  const handerLogout = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(function() {
-        console.log('Sign out');
-        localStorage.removeItem(CHECK_LOGIN);
-        return <Redirect to="/login" />;
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-  };
+  const { toggleTheme, theme } = props;
+  const isLight = theme === 'light';
+  const { appead, toggle } = useContext(ToggleContext);
+
+  console.log('Header', props.theme);
 
   return (
     <HeaderSearch>
@@ -35,13 +28,19 @@ const Header = (props) => {
         <ButtonResponsive className={appead ? 'active' : ''} />
       </ControlButtonResponsive>
       <Search sidebar={true} />
-      <HeaderSetting checkSidebar={true}>
-        <h4 className="title">Katie Reed</h4>
-        <div className="header-btn-setting">
-          <i className="fa fa-cog" />
+      <HeaderSetting>
+        <ButtonSwitchTheme onClick={toggleTheme} lightTheme={isLight}>
+          <SunIcon />
+          <MoonIcon />
+        </ButtonSwitchTheme>
+        <HeaderControl checkSidebar={true}>
+          <h4 className="title">Katie Reed</h4>
+          <div className="header-btn-setting">
+            <i className="fa fa-cog" />
 
-          <DropdownLogout handerLogout={handerLogout} />
-        </div>
+            <DropdownLogout />
+          </div>
+        </HeaderControl>
       </HeaderSetting>
     </HeaderSearch>
   );

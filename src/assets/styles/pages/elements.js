@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 export const ElementsSection = styled.section`
-  height: 100%;
   padding-top: 29px;
-  background-color: #f1f3f5;
 `;
 
 export const ElementTable = styled.div`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.table};
   margin: 0 29px;
   padding-bottom: 30px;
+  border: ${({ theme }) => theme.tableBorder && '1px solid #292b2e'};
   border-radius: 10px;
 `;
 
@@ -21,6 +20,10 @@ export const ElementTools = styled.div`
   padding-left: 20px;
   padding-right: 21px;
   margin-bottom: 3px;
+
+  h5 {
+    color: ${({ theme }) => theme.tableTitle};
+  }
 
   button {
     padding: 12px 34px 12px 33px;

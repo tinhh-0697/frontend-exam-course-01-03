@@ -10,7 +10,7 @@ export const SideBar = styled.section`
 export const SideBarContent = styled.div`
   position: relative;
   z-index: 15;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.sidebar};
   transition: all 200ms;
 
   @media (max-width: 1140px) {
@@ -60,7 +60,7 @@ export const HeaderTitle = styled.h4`
 `;
 
 export const HeaderCategory = styled.div`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.sidebar};
 `;
 
 export const CategoryTitle = styled.h5`
@@ -76,7 +76,7 @@ export const CategoryTitle = styled.h5`
 
 export const CategoryList = styled.ul`
   padding-top: 20px;
-  border-top: 1px solid #eaeced;
+  border-top: 1px solid ${({ theme }) => theme.borderTextSidebar};
   list-style: none;
 
   @media (max-width: 1140px) {

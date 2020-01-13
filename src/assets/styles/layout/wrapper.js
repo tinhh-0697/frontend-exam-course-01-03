@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrap = styled.section`
   display: flex;
+  background-color: ${({ theme }) => theme.main};
   font-family: 'Rubik', sans-serif;
 
   @media (max-width: 1140px) {
@@ -14,8 +15,6 @@ export const Main = styled.section`
 `;
 
 export const MainContent = styled.div`
-  height: 100%;
-
   @media (max-width: 1140px) {
     position: absolute;
     left: 0;
