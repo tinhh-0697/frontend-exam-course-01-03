@@ -5,6 +5,12 @@ export const SideBar = styled.section`
   display: flex;
   flex-direction: column;
   transition: all 200ms;
+
+  @media (max-width: 1140px) {
+    position: absolute;
+    visibility: hidden;
+    height: 100vh;
+  }
 `;
 
 export const SideBarContent = styled.div`
@@ -14,9 +20,26 @@ export const SideBarContent = styled.div`
   transition: all 200ms;
 
   @media (max-width: 1140px) {
+    height: calc(100% - 82px);
+    overflow-y: auto;
+    scrollbar-width: 2px;
+    scrollbar-track-color: ${({ theme }) => theme.scrollTrack};
+    scrollbar-face-color: ${({ theme }) => theme.scrollThumb};
     visibility: ${(props) => (props.appead ? 'visible' : 'hidden')};
     opacity: ${(props) => (props.appead ? '1' : '0')};
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: ${({ theme }) => theme.scrollTrack};
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.scrollThumb};
+    }
   }
 `;
 
@@ -24,6 +47,7 @@ export const HeaderLogo = styled.div`
   display: flex;
   width: 350px;
   height: 82px;
+  visibility: visible;
   background-color: #38c6da;
 
   @media (max-width: 1140px) {

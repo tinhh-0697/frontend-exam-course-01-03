@@ -7,20 +7,15 @@ export const Wrap = styled.section`
 
   @media (max-width: 1140px) {
     position: relative;
+    display: block;
   }
 `;
 
 export const Main = styled.section`
   flex: 1;
-`;
-
-export const MainContent = styled.div`
   @media (max-width: 1140px) {
-    position: absolute;
-    left: 0;
-  }
-
-  @media (max-width: 740px) {
-    min-width: 500px;
+    height: 100vh;
   }
 `;
+
+export const MainContent = styled.div``;

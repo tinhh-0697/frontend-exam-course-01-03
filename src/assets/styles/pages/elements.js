@@ -32,6 +32,10 @@ export const ElementTools = styled.div`
     font-size: 18px;
     border: 0;
     border-radius: 7px;
+
+    @media (max-width: 576px) {
+      padding: 8px 20px;
+    }
   }
 
   .btn-primary {
@@ -54,6 +58,11 @@ export const ModalRadio = styled.div`
     margin-right: 5px;
     vertical-align: text-top;
   }
+`;
+
+export const ErrorText = styled.span`
+  display: inline-block;
+  color: red;
 `;
 
 export const ModalInput = styled.div`

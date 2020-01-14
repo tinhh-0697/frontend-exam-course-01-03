@@ -9,7 +9,7 @@ import {
 } from '../../assets/styles/layout/header';
 
 import { withRouter } from 'react-router-dom';
-import { ToggleContext } from '../layout/ToggleSidebar';
+import { ToggleContext } from '../context/ToggleSidebar';
 import { Search } from './Search';
 import { DropdownLogout } from './DropdownLogout';
 import { ReactComponent as MoonIcon } from '../../assets/images/moon.svg';
@@ -19,8 +19,6 @@ const Header = (props) => {
   const { toggleTheme, theme } = props;
   const isLight = theme === 'light';
   const { appead, toggle } = useContext(ToggleContext);
-
-  console.log('Header', props.theme);
 
   return (
     <HeaderSearch>

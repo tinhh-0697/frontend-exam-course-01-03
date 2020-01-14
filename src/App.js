@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Layout } from './modules/layout/Layout';
 import { Elements } from './modules/pages/Elements';
@@ -11,18 +11,10 @@ import { FormLogin } from './modules/pages/FormLogin';
 import { AuthProvider } from './Auth';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './assets/styles/components/theme';
+import { useDarkMode } from './useDarkMode';
 
 function App() {
-  const [theme, setTheme] = useState('light');
-
-  const toggleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
-    console.log('theme App', theme);
-  };
+  const [theme, toggleTheme] = useDarkMode();
 
   return (
     <AuthProvider>

@@ -23,7 +23,7 @@ import {
   IconPages,
   IconEcommerce,
 } from './Icons';
-import { ToggleContext } from '../layout/ToggleSidebar';
+import { ToggleContext } from '../context/ToggleSidebar';
 import { Search } from './Search';
 import { DropdownLogout } from './DropdownLogout';
 import { HeaderSetting, HeaderControl } from '../../assets/styles/layout/header';
@@ -49,7 +49,7 @@ export const Sidebar = () => {
   const { appead } = useContext(ToggleContext);
 
   return (
-    <SideBar>
+    <SideBar appead={appead}>
       <HeaderLogo appead={appead}>
         <HeaderThumbnail>
           <HeaderImgLogo src={logo} alt="" />

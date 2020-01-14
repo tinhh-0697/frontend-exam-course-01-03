@@ -121,7 +121,9 @@ export const HeaderForm = styled.div`
 
 export const HeaderControl = styled.div`
   display: ${(props) => (props.checkSidebar ? 'flex' : 'none')};
+  align-items: center;
   width: 100%;
+  margin-top: 1px;
 
   @media (max-width: 660px) {
     display: ${(props) => (props.checkSidebar ? 'none' : 'block')};
@@ -129,7 +131,7 @@ export const HeaderControl = styled.div`
 
   .header-wrap-logout {
     position: absolute;
-    left: -50%;
+    left: 0;
     bottom: -65%;
     z-index: 15;
     transform: translate(25%, 40%);
@@ -139,6 +141,11 @@ export const HeaderControl = styled.div`
     font-family: 'Gelasio', serif;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
+    h5 {
+      color: ${({ theme }) => theme.textInputSmall};
+      text-align: center;
+    }
+
     @media (max-width: 1140px) {
       transform: translate(13%, 40%);
     }
@@ -147,11 +154,6 @@ export const HeaderControl = styled.div`
       position: static;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05), 0 2px 10px 0 rgba(0, 0, 0, 0.1);
       transform: translate(0, 0);
-
-      h5 {
-        color: ${({ theme }) => theme.textInputSmall};
-        text-align: center;
-      }
     }
 
     button {
@@ -169,7 +171,7 @@ export const HeaderSetting = styled.div`
   margin-left: auto;
 
   .header-btn-setting {
-    margin-right: 30px;
+    margin-right: 11px;
     background-color: transparent;
     cursor: pointer;
 
@@ -179,10 +181,10 @@ export const HeaderSetting = styled.div`
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 200px;
+      width: 150px;
       height: 34px;
       background-color: transparent;
-      transform: translateX(-20%);
+      transform: translate(61%, 10%);
     }
 
     :hover:before {
@@ -210,7 +212,7 @@ export const HeaderSetting = styled.div`
 
   i {
     color: ${({ theme }) => theme.iconSetting};
-    font-size: 30px;
+    font-size: 38px;
 
     @media (max-width: 1140px) {
       color: #fff;

@@ -8,7 +8,7 @@ export const lightTheme = {
   tableBorder: false,
   tableTitle: '#555',
   borderTopTable: '#eaeced',
-  tableRowEven: 'f7f8f9',
+  tableRowEven: '#f7f8f9',
   tableRowOdd: '#fff',
   tableHead: '#555555',
   tableColumnView: '#676767',
@@ -19,12 +19,14 @@ export const lightTheme = {
   iconCategory: '#D5D8DB',
   backgroundInputSmall: '#fff',
   textInputSmall: '#212529',
+  scrollTrack: '#f1f1f1',
+  scrollThumb: '#38c6da',
   toggleBorder: '#FFF',
   gradient: 'linear-gradient(#39598A, #79D7ED)',
 };
 
 export const darkTheme = {
-  header: '#191C1D',
+  header: '#1D2024',
   textHeader: '#797c80',
   iconSetting: '#494b4f',
   iconSearch: '#84878d',
@@ -34,7 +36,7 @@ export const darkTheme = {
   tableTitle: '#fff',
   borderTopTable: '#36383b',
   tableRowEven: '#1E2125',
-  tableRowOdd: '222427',
+  tableRowOdd: '#1C1E22',
   tableHead: '#aaaaaa',
   tableColumnView: '#676767',
   sidebar: '#1E2125',
@@ -44,6 +46,8 @@ export const darkTheme = {
   iconCategory: '#494C53',
   backgroundInputSmall: '#1E2125',
   textInputSmall: '#bcbfc4',
+  scrollTrack: '#f1f1f1',
+  scrollThumb: '#1e2125',
   toggleBorder: '#6B8096',
   gradient: 'linear-gradient(#091236, #1E215D)',
 };

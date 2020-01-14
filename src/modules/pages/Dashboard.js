@@ -1,5 +1,6 @@
 import React from 'react';
+import { Text } from '../../assets/styles/pages/anotherPage';
 
 export const Dashboard = () => {
-  return <div>Dashboard</div>;
+  return <Text>Dashboard</Text>;
 };
