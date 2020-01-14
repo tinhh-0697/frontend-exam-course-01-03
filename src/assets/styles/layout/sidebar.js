@@ -5,18 +5,41 @@ export const SideBar = styled.section`
   display: flex;
   flex-direction: column;
   transition: all 200ms;
+
+  @media (max-width: 1140px) {
+    position: absolute;
+    visibility: hidden;
+    height: 100vh;
+  }
 `;
 
 export const SideBarContent = styled.div`
   position: relative;
   z-index: 15;
-  background-color: #fff;
-  transition: all 300ms;
+  background-color: ${({ theme }) => theme.sidebar};
+  transition: all 200ms;
 
-  @media (max-width: 1120px) {
-    pointer-events: ${(props) => (props.appead ? 'all' : 'none')};
+  @media (max-width: 1140px) {
+    height: calc(100% - 82px);
+    overflow-y: auto;
+    scrollbar-width: 2px;
+    scrollbar-track-color: ${({ theme }) => theme.scrollTrack};
+    scrollbar-face-color: ${({ theme }) => theme.scrollThumb};
+    visibility: ${(props) => (props.appead ? 'visible' : 'hidden')};
     opacity: ${(props) => (props.appead ? '1' : '0')};
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: ${({ theme }) => theme.scrollTrack};
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.scrollThumb};
+    }
   }
 `;
 
@@ -24,19 +47,20 @@ export const HeaderLogo = styled.div`
   display: flex;
   width: 350px;
   height: 82px;
+  visibility: visible;
   background-color: #38c6da;
 
-  @media (max-width: 1120px) {
+  @media (max-width: 1140px) {
     justify-content: center;
     align-items: center;
-    width: auto;
+    width: 258px;
   }
 `;
 
 export const HeaderThumbnail = styled.div`
   margin: 15px 18px 11px 34px;
 
-  @media (max-width: 1120px) {
+  @media (max-width: 1140px) {
     margin: 0;
     margin-right: 15px;
   }
@@ -53,14 +77,14 @@ export const HeaderTitle = styled.h4`
   font-size: 25px;
   font-weight: 500;
 
-  @media (max-width: 1120px) {
+  @media (max-width: 1140px) {
     margin: 0;
     font-size: 18px;
   }
 `;
 
 export const HeaderCategory = styled.div`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.sidebar};
 `;
 
 export const CategoryTitle = styled.h5`
@@ -68,7 +92,7 @@ export const CategoryTitle = styled.h5`
   color: #bcbfc4;
   font-size: 18px;
 
-  @media (max-width: 1120px) {
+  @media (max-width: 1140px) {
     margin: 30px 0 21px 25px;
     font-size: 16px;
   }
@@ -76,10 +100,10 @@ export const CategoryTitle = styled.h5`
 
 export const CategoryList = styled.ul`
   padding-top: 20px;
-  border-top: 1px solid #eaeced;
+  border-top: 1px solid ${({ theme }) => theme.borderTextSidebar};
   list-style: none;
 
-  @media (max-width: 1120px) {
+  @media (max-width: 1140px) {
     position: relative;
     left: -16px;
   }
@@ -110,7 +134,7 @@ export const CategoryItem = styled(NavLink)`
       background-color: #38c6da;
       transform: translateX(-40px);
 
-      @media (max-width: 1120px) {
+      @media (max-width: 1140px) {
         transform: translateX(-24px);
       }
     }
@@ -137,8 +161,7 @@ export const CategoryItem = styled(NavLink)`
     font-size: 18px;
     border-radius: 20px;
 
-    @media (max-width: 1120px) {
-      margin-left: 65px;
+    @media (max-width: 1140px) {
       margin-right: 0;
       font-size: 12px;
     }
@@ -148,7 +171,7 @@ export const CategoryItem = styled(NavLink)`
 export const TitleItem = styled.span`
   padding-left: 26px;
 
-  @media (max-width: 1120px) {
+  @media (max-width: 1140px) {
     padding-left: 14px;
     font-size: 14px;
   }

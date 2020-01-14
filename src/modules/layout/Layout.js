@@ -8,7 +8,7 @@ const ActiceWithLoadLayout = withLoadLayout(Wrapper);
 
 export const Layout = (props) => {
   return localStorage.getItem(CHECK_LOGIN) ? (
-    <ActiceWithLoadLayout>{props.children}</ActiceWithLoadLayout>
+    <ActiceWithLoadLayout {...props}>{props.children}</ActiceWithLoadLayout>
   ) : (
     <Redirect to="/login" />
   );

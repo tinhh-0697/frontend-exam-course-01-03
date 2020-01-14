@@ -1,5 +1,6 @@
 import React from 'react';
+import { Text } from '../../assets/styles/pages/anotherPage';
 
 export const Forms = () => {
-  return <div>Forms</div>;
+  return <Text>Forms</Text>;
 };

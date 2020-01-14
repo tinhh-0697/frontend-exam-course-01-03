@@ -8,9 +8,9 @@ export const ListItem = (props) => {
   const Icon = styled(icon)`
     width: 25px;
     height: 25px;
-    fill: #d5d8db;
+    fill: ${({ theme }) => theme.iconCategory};
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1140px) {
       width: 20px;
       height: 20px;
     }

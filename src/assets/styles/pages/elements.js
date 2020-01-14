@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 export const ElementsSection = styled.section`
-  height: 100%;
   padding-top: 29px;
-  background-color: #f1f3f5;
 `;
 
 export const ElementTable = styled.div`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.table};
   margin: 0 29px;
   padding-bottom: 30px;
+  border: ${({ theme }) => theme.tableBorder && '1px solid #292b2e'};
   border-radius: 10px;
 `;
 
@@ -22,6 +21,10 @@ export const ElementTools = styled.div`
   padding-right: 21px;
   margin-bottom: 3px;
 
+  h5 {
+    color: ${({ theme }) => theme.tableTitle};
+  }
+
   button {
     padding: 12px 34px 12px 33px;
     color: #fff;
@@ -29,6 +32,10 @@ export const ElementTools = styled.div`
     font-size: 18px;
     border: 0;
     border-radius: 7px;
+
+    @media (max-width: 576px) {
+      padding: 8px 20px;
+    }
   }
 
   .btn-primary {
@@ -51,6 +58,11 @@ export const ModalRadio = styled.div`
     margin-right: 5px;
     vertical-align: text-top;
   }
+`;
+
+export const ErrorText = styled.span`
+  display: inline-block;
+  color: red;
 `;
 
 export const ModalInput = styled.div`

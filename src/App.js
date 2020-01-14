@@ -9,23 +9,30 @@ import { Forms } from './modules/pages/Forms';
 import { Charts } from './modules/pages/Charts';
 import { FormLogin } from './modules/pages/FormLogin';
 import { AuthProvider } from './Auth';
+import { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme } from './assets/styles/components/theme';
+import { useDarkMode } from './useDarkMode';
 
 function App() {
+  const [theme, toggleTheme] = useDarkMode();
+
   return (
     <AuthProvider>
-      <Router>
-        <Switch>
-          <Route path="/login" component={FormLogin} />
-          <Layout>
-            <Route exact path="/" component={Elements} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/home" component={Home} />
-            <Route path="/widgets" component={Widgets} />
-            <Route path="/forms" component={Forms} />
-            <Route path="/charts" component={Charts} />
-          </Layout>
-        </Switch>
-      </Router>
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+        <Router>
+          <Switch>
+            <Route path="/login" component={FormLogin} />
+            <Layout toggleTheme={toggleTheme} theme={theme}>
+              <Route exact path="/" component={Elements} />
+              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/home" component={Home} />
+              <Route path="/widgets" component={Widgets} />
+              <Route path="/forms" component={Forms} />
+              <Route path="/charts" component={Charts} />
+            </Layout>
+          </Switch>
+        </Router>
+      </ThemeProvider>
     </AuthProvider>
   );
 }

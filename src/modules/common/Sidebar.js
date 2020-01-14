@@ -23,7 +23,10 @@ import {
   IconPages,
   IconEcommerce,
 } from './Icons';
-import { ToggleContext } from '../layout/ToggleSidebar';
+import { ToggleContext } from '../context/ToggleSidebar';
+import { Search } from './Search';
+import { DropdownLogout } from './DropdownLogout';
+import { HeaderSetting, HeaderControl } from '../../assets/styles/layout/header';
 
 const listCategory1 = [
   { icon: IconDashboard, itemName: 'Dashboard', noti: 2, link: '/dashboard' },
@@ -44,8 +47,9 @@ const listCategory2 = [
 
 export const Sidebar = () => {
   const { appead } = useContext(ToggleContext);
+
   return (
-    <SideBar>
+    <SideBar appead={appead}>
       <HeaderLogo appead={appead}>
         <HeaderThumbnail>
           <HeaderImgLogo src={logo} alt="" />
@@ -53,6 +57,12 @@ export const Sidebar = () => {
         <HeaderTitle>ORBITA</HeaderTitle>
       </HeaderLogo>
       <SideBarContent appead={appead}>
+        <HeaderSetting>
+          <HeaderControl checkSidebar={false}>
+            <DropdownLogout />
+          </HeaderControl>
+        </HeaderSetting>
+        <Search siderbar={true} />
         <HeaderCategory>
           <CategoryTitle>CATEGORY 1</CategoryTitle>
           <ListCategory list={listCategory1} />
