@@ -1,9 +1,8 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import { CHECK_LOGIN } from '../variable/LocalStorage';
 import firebase from '../../firebase';
 
-export const DropdownLogout = (props) => {
+export const DropdownLogout = () => {
   const handerLogout = () => {
     firebase
       .auth()
@@ -11,7 +10,7 @@ export const DropdownLogout = (props) => {
       .then(function() {
         console.log('Sign out');
         localStorage.removeItem(CHECK_LOGIN);
-        return <Redirect to="/login" />;
+        window.location.reload();
       })
       .catch(function(error) {
         console.log(error);

@@ -1,30 +1,31 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { fontSize, color } from '../variable';
+import { breakpoints } from '../mixins/responsive';
 
 export const SideBar = styled.section`
   display: flex;
   flex-direction: column;
   transition: all 200ms;
 
-  @media (max-width: 1140px) {
+  @media (max-width: ${breakpoints.md}) {
     position: absolute;
     visibility: hidden;
-    height: 100vh;
+    height: 100%;
   }
 `;
 
 export const SideBarContent = styled.div`
   position: relative;
+  height: calc(100% - 8%);
   z-index: 15;
   background-color: ${({ theme }) => theme.sidebar};
   transition: all 200ms;
 
-  @media (max-width: 1140px) {
-    height: calc(100% - 82px);
+  @media (max-width: ${breakpoints.md}) {
+    height: 80%;
     overflow-y: auto;
-    scrollbar-width: 2px;
-    scrollbar-track-color: ${({ theme }) => theme.scrollTrack};
-    scrollbar-face-color: ${({ theme }) => theme.scrollThumb};
+    scrollbar-width: none;
     visibility: ${(props) => (props.appead ? 'visible' : 'hidden')};
     opacity: ${(props) => (props.appead ? '1' : '0')};
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -48,9 +49,9 @@ export const HeaderLogo = styled.div`
   width: 350px;
   height: 82px;
   visibility: visible;
-  background-color: #38c6da;
+  background-color: ${color.colorBrand};
 
-  @media (max-width: 1140px) {
+  @media (max-width: ${breakpoints.md}) {
     justify-content: center;
     align-items: center;
     width: 258px;
@@ -60,7 +61,7 @@ export const HeaderLogo = styled.div`
 export const HeaderThumbnail = styled.div`
   margin: 15px 18px 11px 34px;
 
-  @media (max-width: 1140px) {
+  @media (max-width: ${breakpoints.md}) {
     margin: 0;
     margin-right: 15px;
   }
@@ -73,13 +74,13 @@ export const HeaderImgLogo = styled.img`
 export const HeaderTitle = styled.h4`
   display: inline-block;
   margin-top: 27px;
-  color: #ffffff;
-  font-size: 25px;
+  color: ${color.colorWhite};
+  font-size: ${fontSize.fontSizeXXLarge};
   font-weight: 500;
 
-  @media (max-width: 1140px) {
+  @media (max-width: ${breakpoints.md}) {
     margin: 0;
-    font-size: 18px;
+    font-size: ${fontSize.fontSizeMedium};
   }
 `;
 
@@ -89,12 +90,12 @@ export const HeaderCategory = styled.div`
 
 export const CategoryTitle = styled.h5`
   margin: 50px 0 21px 35px;
-  color: #bcbfc4;
-  font-size: 18px;
+  color: ${color.colorTitleCategory};
+  font-size: ${fontSize.fontSizeMedium};
 
-  @media (max-width: 1140px) {
+  @media (max-width: ${breakpoints.md}) {
     margin: 30px 0 21px 25px;
-    font-size: 16px;
+    font-size: ${fontSize.fontSizeXBase};
   }
 `;
 
@@ -103,7 +104,7 @@ export const CategoryList = styled.ul`
   border-top: 1px solid ${({ theme }) => theme.borderTextSidebar};
   list-style: none;
 
-  @media (max-width: 1140px) {
+  @media (max-width: ${breakpoints.md}) {
     position: relative;
     left: -16px;
   }
@@ -114,14 +115,14 @@ export const CategoryItem = styled(NavLink)`
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 13px;
-  color: #757d89;
+  color: ${({ theme }) => theme.textSidebar};
   text-decoration: none;
-  font-size: 18px;
+  font-size: ${fontSize.fontSizeMedium};
   line-height: 45px;
 
   &.active {
     position: relative;
-    color: #38c6da;
+    color: ${color.colorBrand};
 
     :before {
       content: '';
@@ -134,7 +135,7 @@ export const CategoryItem = styled(NavLink)`
       background-color: #38c6da;
       transform: translateX(-40px);
 
-      @media (max-width: 1140px) {
+      @media (max-width: ${breakpoints.md}) {
         transform: translateX(-24px);
       }
     }
@@ -145,7 +146,7 @@ export const CategoryItem = styled(NavLink)`
   }
 
   :hover {
-    color: #38c6da;
+    color: ${color.colorBrand};
     text-decoration: none;
 
     > .icon {
@@ -157,13 +158,13 @@ export const CategoryItem = styled(NavLink)`
     margin-left: auto;
     margin-right: 31px;
     padding: 7px 21px;
-    background-color: #38c6da;
-    font-size: 18px;
+    background-color: ${color.colorBrand};
+    font-size: ${fontSize.fontSizeMedium};
     border-radius: 20px;
 
-    @media (max-width: 1140px) {
+    @media (max-width: ${breakpoints.md}) {
       margin-right: 0;
-      font-size: 12px;
+      font-size: ${fontSize.fontSizeTiny};
     }
   }
 `;
@@ -171,8 +172,8 @@ export const CategoryItem = styled(NavLink)`
 export const TitleItem = styled.span`
   padding-left: 26px;
 
-  @media (max-width: 1140px) {
+  @media (max-width: ${breakpoints.md}) {
     padding-left: 14px;
-    font-size: 14px;
+    font-size: ${fontSize.fontSizeXsmall};
   }
 `;

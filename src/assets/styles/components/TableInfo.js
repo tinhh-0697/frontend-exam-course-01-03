@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { Table } from 'reactstrap';
+import { fontSize, color } from '../variable';
+import { breakpoints } from '../mixins/responsive';
 
 export const TableInfo = styled(Table)`
-  font-size: 17px;
+  font-size: ${fontSize.fontSizeBase};
 
   thead {
     tr {
@@ -54,22 +56,23 @@ export const TableInfo = styled(Table)`
       padding-top: 30px;
       padding-bottom: 18px;
       border: 0;
-
-      @media (max-width: 1140px) {
-        vertical-align: middle;
-      }
+      vertical-align: middle;
 
       :nth-child(1) {
         padding-left: 72px;
-        color: #a0a0a0;
+        color: ${color.elementTable};
       }
 
       :nth-child(2) {
-        width: 120px;
         color: ${({ theme }) => theme.tableColumnView};
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+
+        span {
+          width: 100px;
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       }
 
       :nth-child(3),
@@ -88,7 +91,7 @@ export const TableInfo = styled(Table)`
       .btn {
         width: 83px;
         height: 37px;
-        font-size: 15px;
+        font-size: ${fontSize.fontSizeSmall};
         border: 0;
 
         :focus,
@@ -99,16 +102,15 @@ export const TableInfo = styled(Table)`
 
       .btn-success {
         margin-right: 11px;
-        background-color: #6ad36e;
+        background-color: ${color.btnSuccess};
 
-        @media (max-width: 1594px) {
+        @media (max-width: ${breakpoints.lg}) {
           margin-right: 0;
-          /* margin-bottom: 5px; */
         }
       }
 
       .btn-danger {
-        background-color: #fb5867;
+        background-color: ${color.btnDanger};
       }
     }
   }

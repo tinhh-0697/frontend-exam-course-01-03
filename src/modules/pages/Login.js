@@ -29,10 +29,10 @@ const Login = (props) => {
 
   const { currentUser } = useContext(AuthContext);
 
-  // If login before, you don't need render Login page
+  // If login before, you don't need render Login page (second time and after)
   if (localStorage.getItem(CHECK_LOGIN)) return <Redirect to="/" />;
 
-  // If don't login yet, you will render Login page
+  // If don't login yet, you will render Login page (first time login)
   if (currentUser) {
     localStorage.setItem(CHECK_LOGIN, true); // Check another link have login in Layout
     return <Redirect to="/" />;

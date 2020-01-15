@@ -8,7 +8,6 @@ import {
   HeaderControl,
 } from '../../assets/styles/layout/header';
 
-import { withRouter } from 'react-router-dom';
 import { ToggleContext } from '../context/ToggleSidebar';
 import { Search } from './Search';
 import { DropdownLogout } from './DropdownLogout';
@@ -44,4 +43,4 @@ const Header = (props) => {
   );
 };
 
-export default withRouter(Header);
+export default Header;

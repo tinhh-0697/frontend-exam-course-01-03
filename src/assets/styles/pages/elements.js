@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { fontSize, color } from '../variable';
+import { breakpoints } from '../mixins/responsive';
 
 export const ElementsSection = styled.section`
   padding-top: 29px;
@@ -27,13 +29,13 @@ export const ElementTools = styled.div`
 
   button {
     padding: 12px 34px 12px 33px;
-    color: #fff;
-    background-color: #38c6da;
-    font-size: 18px;
+    color: ${color.colorWhite};
+    background-color: ${color.colorBrand};
+    font-size: ${fontSize.fontSizeMedium};
     border: 0;
     border-radius: 7px;
 
-    @media (max-width: 576px) {
+    @media (max-width: ${breakpoints.xs}) {
       padding: 8px 20px;
     }
   }
@@ -62,7 +64,7 @@ export const ModalRadio = styled.div`
 
 export const ErrorText = styled.span`
   display: inline-block;
-  color: red;
+  color: ${color.colorError};
 `;
 
 export const ModalInput = styled.div`
@@ -73,8 +75,8 @@ export const ModalInput = styled.div`
     position: absolute;
     top: 0;
     left: 5px;
-    font-size: 1rem;
-    color: #757575;
+    color: ${color.colorLabelModal};
+    font-size: ${fontSize.fontSizeXBase};
     cursor: text;
     pointer-events: none;
     transform: translateY(50%);
@@ -100,9 +102,8 @@ export const ModalInput = styled.div`
     :focus + label,
     :valid + label {
       left: 5px;
-      color: #38c6da;
+      color: ${color.colorBrand};
       font-weight: 300;
-      font-size: 1rem;
       transform: translate(-8px, -14px) scale(0.8);
     }
 

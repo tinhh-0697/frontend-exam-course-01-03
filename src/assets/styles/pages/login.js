@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 import { Col } from 'reactstrap';
+import { fontSize, fontFamily, color } from '../variable';
 
 export const LoginTitle = styled.div`
   margin-bottom: 45px;
   text-align: center;
 
   h1 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 60px;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+    font-family: ${fontFamily.fontLoginTitle};
+    font-size: ${fontSize.fontSizeXXXXXLarge};
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -17,7 +18,7 @@ export const LoginWrap = styled(Col)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.16);
 
   .form-control {
     height: auto;
@@ -34,7 +35,7 @@ export const LoginForm = styled.div`
     display: inline-block;
     width: 100%;
     margin-top: 20px;
-    color: #38c6da;
+    color: ${color.colorBrand};
     text-align: end;
 
     :hover {
@@ -49,7 +50,7 @@ export const LoginSection = styled.section`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: 'Rubik', sans-serif;
+  font-family: ${fontFamily.fontBase};
 `;
 
 export const LoginInput = styled.div`
@@ -60,8 +61,8 @@ export const LoginInput = styled.div`
     position: absolute;
     top: 0;
     left: 5px;
-    font-size: 1rem;
-    color: #757575;
+    color: ${color.colorLabelModal};
+    font-size: ${fontSize.fontSizeXBase};
     cursor: text;
     pointer-events: none;
     transform: translateY(50%);
@@ -85,9 +86,8 @@ export const LoginInput = styled.div`
     :focus + label,
     :valid + label {
       left: 5px;
-      color: #38c6da;
+      color: ${color.colorBrand};
       font-weight: 300;
-      font-size: 1rem;
       transform: translate(-8px, -14px) scale(0.8);
     }
 
@@ -102,15 +102,15 @@ export const TextError = styled.span`
   display: inline-block;
   margin-top: 10px;
   margin-left: 5px;
-  color: red;
+  color: ${color.colorError};
 `;
 
 export const ButtonLogin = styled.button`
   width: 100%;
   padding: 10px 0;
-  margin: 30px 5px;
-  color: #fff;
+  margin: 10px 5px 30px;
+  color: ${color.colorWhite};
+  background-color: ${color.colorBrand};
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  background-image: linear-gradient(to right top, #6ad36e, #38d394, #00d1b4, #00cccc, #38c6da);
   border: 0;
 `;
