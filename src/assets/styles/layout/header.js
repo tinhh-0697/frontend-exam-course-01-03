@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { fontSize, fontFamily, color } from '../variable';
+import { breakpoints } from '../mixins/responsive';
 
 export const HeaderSearch = styled.div`
   display: flex;
@@ -7,17 +9,17 @@ export const HeaderSearch = styled.div`
   box-shadow: 0 0 54px rgba(0, 0, 0, 0.09);
   transition: background-color 200ms;
 
-  @media (max-width: 1140px) {
-    background-color: #38c6da;
+  @media (max-width: ${breakpoints.md}) {
+    background-color: ${color.colorBrand};
   }
 `;
 
 export const ButtonResponsive = styled.span`
-  @media (max-width: 1140px) {
+  @media (max-width: ${breakpoints.md}) {
     position: absolute;
     width: 24px;
     height: 3px;
-    background-color: #fff;
+    background-color: ${color.colorWhite};
     transition: background-color 0.2s;
     transform: translate(-50%, 50%);
 
@@ -28,7 +30,7 @@ export const ButtonResponsive = styled.span`
       right: 0;
       width: 24px;
       height: 3px;
-      background-color: #fff;
+      background-color: ${color.colorWhite};
       transform-origin: 0 50%;
       transition: transform 0.2s;
     }
@@ -58,7 +60,7 @@ export const ButtonResponsive = styled.span`
 export const ControlButtonResponsive = styled.button`
   display: none;
 
-  @media (max-width: 1140px) {
+  @media (max-width: ${breakpoints.md}) {
     display: inline-block;
     position: relative;
     top: 20%;
@@ -80,7 +82,7 @@ export const HeaderForm = styled.div`
   display: ${(props) => (props.sidebar ? 'block' : 'none')};
   margin: 21px 0 25px 30px;
 
-  @media (max-width: 1140px) {
+  @media (max-width: ${breakpoints.md}) {
     display: block;
     display: ${(props) => (props.sidebar ? 'none' : 'block')};
     margin: 25px 0 15px 15px;
@@ -89,20 +91,20 @@ export const HeaderForm = styled.div`
   button {
     color: ${({ theme }) => theme.iconSearch};
     background-color: transparent;
-    font-size: 30px;
+    font-size: ${fontSize.fontSizeXXXLarge};
     border: 0;
 
-    @media (max-width: 1140px) {
-      font-size: 14px;
+    @media (max-width: ${breakpoints.md}) {
+      font-size: ${fontSize.fontSizeXsmall};
     }
   }
 
   input {
     margin-left: 30px;
     border: 0;
-    color: #b5b5b5;
+    color: ${color.colorInput};
     background-color: transparent;
-    font-size: 18px;
+    font-size: ${fontSize.fontSizeMedium};
     font-weight: 300;
 
     :focus,
@@ -110,10 +112,10 @@ export const HeaderForm = styled.div`
       outline: 0;
     }
 
-    @media (max-width: 1140px) {
+    @media (max-width: ${breakpoints.md}) {
       margin-left: 10px;
       vertical-align: middle;
-      font-size: 16px;
+      font-size: ${fontSize.fontSizeXBase};
       letter-spacing: 2px;
     }
   }
@@ -125,7 +127,7 @@ export const HeaderControl = styled.div`
   width: 100%;
   margin-top: 1px;
 
-  @media (max-width: 660px) {
+  @media (max-width: ${breakpoints.xs}) {
     display: ${(props) => (props.checkSidebar ? 'none' : 'block')};
   }
 
@@ -138,7 +140,7 @@ export const HeaderControl = styled.div`
     display: ${(props) => (props.checkSidebar ? 'none' : 'block')};
     padding: 20px 20px;
     background-color: ${({ theme }) => theme.backgroundInputSmall};
-    font-family: 'Gelasio', serif;
+    font-family: ${fontFamily.fontDropdownLogout};
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
     h5 {
@@ -146,11 +148,11 @@ export const HeaderControl = styled.div`
       text-align: center;
     }
 
-    @media (max-width: 1140px) {
+    @media (max-width: ${breakpoints.md}) {
       transform: translate(13%, 40%);
     }
 
-    @media (max-width: 660px) {
+    @media (max-width: ${breakpoints.sm}) {
       position: static;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05), 0 2px 10px 0 rgba(0, 0, 0, 0.1);
       transform: translate(0, 0);
@@ -159,7 +161,7 @@ export const HeaderControl = styled.div`
     button {
       width: 100%;
       margin-top: 10px;
-      font-family: 'Abril Fatface', cursive;
+      font-family: ${fontFamily.fontDropdownButton};
     }
   }
 `;
@@ -201,21 +203,21 @@ export const HeaderSetting = styled.div`
     margin-bottom: 0;
     margin-right: 20px;
     color: ${({ theme }) => theme.textHeader};
-    font-size: 20px;
+    font-size: ${fontSize.fontSizeLarge};
     white-space: nowrap;
 
-    @media (max-width: 1140px) {
+    @media (max-width: ${breakpoints.md}) {
       margin-right: 7px;
-      color: #fff;
+      color: ${color.colorWhite};
     }
   }
 
   i {
     color: ${({ theme }) => theme.iconSetting};
-    font-size: 38px;
+    font-size: ${fontSize.fontSizeXXXXLarge};
 
-    @media (max-width: 1140px) {
-      color: #fff;
+    @media (max-width: ${breakpoints.md}) {
+      color: ${color.colorWhite};
     }
   }
 `;
@@ -232,9 +234,12 @@ export const ButtonSwitchTheme = styled.button`
   border: 2px solid ${({ theme }) => theme.toggleBorder};
   border-radius: 30px;
   cursor: pointer;
-  font-size: 0.5rem;
   overflow: hidden;
   transition: all 200ms;
+
+  @media (max-width: ${breakpoints.ss}) {
+    width: 70px;
+  }
 
   &:focus,
   &:active {

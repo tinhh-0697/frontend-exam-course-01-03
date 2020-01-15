@@ -8,6 +8,9 @@ import Uncheck from '../../assets/images/uncheck.png';
 export const ArticleItem = (props) => {
   const { article } = props;
   const [modal, setModal] = useState(false);
+  const confirmDelete = () => {
+    if (window.confirm('Do you want delete?')) onDelete();
+  };
   const toggle = () => setModal(!modal);
   const onDelete = () => {
     const db = firebase.firestore();
@@ -28,7 +31,9 @@ export const ArticleItem = (props) => {
       <td>
         <span className="name-element">{article.name}</span>
       </td>
-      <td>{numberWithCommas(article.views)}</td>
+      <td>
+        <span>{numberWithCommas(article.views)}</span>
+      </td>
       <td>{article.status ? <img src={Check} alt="" /> : <img src={Uncheck} alt="" />}</td>
       <td>
         <Button color="success" onClick={toggle}>
@@ -43,7 +48,7 @@ export const ArticleItem = (props) => {
           toggle={toggle}
           title="Edit Item"
         />
-        <Button color="danger" onClick={onDelete}>
+        <Button color="danger" onClick={confirmDelete}>
           Delete
         </Button>
       </td>

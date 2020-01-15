@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import { fontFamily } from '../variable';
+import { breakpoints } from '../mixins/responsive';
 
 export const Wrap = styled.section`
   display: flex;
   background-color: ${({ theme }) => theme.main};
-  font-family: 'Rubik', sans-serif;
+  font-family: ${fontFamily.fontBase};
 
-  @media (max-width: 1140px) {
+  @media (max-width: ${breakpoints.md}) {
     position: relative;
     display: block;
   }
@@ -13,9 +15,10 @@ export const Wrap = styled.section`
 
 export const Main = styled.section`
   flex: 1;
-  @media (max-width: 1140px) {
-    height: 100vh;
-  }
 `;
 
-export const MainContent = styled.div``;
+export const MainContent = styled.div`
+  @media (max-width: ${breakpoints.md}) {
+    height: ${(props) => (props.path ? '100%' : '100vh')};
+  }
+`;
