@@ -20,12 +20,13 @@ const Login = (props) => {
   const handleLogin = async (event) => {
     event.preventDefault();
     const { email, password } = event.target.elements;
-
-    try {
-      await firebase.auth().signInWithEmailAndPassword(email.value, password.value);
-      history.push('/');
-    } catch (error) {
-      setError(true);
+    if (email && password) {
+      try {
+        await firebase.auth().signInWithEmailAndPassword(email.value, password.value);
+        history.push('/');
+      } catch (error) {
+        setError(true);
+      }
     }
   };
 
