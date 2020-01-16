@@ -18,7 +18,6 @@ export const LoginWrap = styled(Col)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.16);
 
   .form-control {
     height: auto;
@@ -29,7 +28,11 @@ export const LoginWrap = styled(Col)`
 
 export const LoginForm = styled.div`
   width: 100%;
+  height: 100%;
   padding: 30px;
+  background-color: ${color.colorWhite};
+  border-radius: 2px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
 
   .login-section__forgot {
     display: inline-block;
@@ -46,11 +49,25 @@ export const LoginForm = styled.div`
 `;
 
 export const LoginSection = styled.section`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   font-family: ${fontFamily.fontBase};
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #38c6da, #85d2f0, #bddefb, #e5ecfd, #ffffff);
+    opacity: 0.7;
+  }
 `;
 
 export const LoginInput = styled.div`
@@ -110,7 +127,23 @@ export const ButtonLogin = styled.button`
   padding: 10px 0;
   margin: 10px 5px 30px;
   color: ${color.colorWhite};
+  font-family: ${fontFamily.fontLoginTitle};
+  letter-spacing: 2px;
   background-color: ${color.colorBrand};
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   border: 0;
+  transition: background-color 400ms;
+
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: #8ca49c;
+  }
+
+  &:active {
+    background-color: #6d9382;
+  }
 `;

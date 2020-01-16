@@ -152,7 +152,7 @@ export const HeaderControl = styled.div`
       transform: translate(13%, 40%);
     }
 
-    @media (max-width: ${breakpoints.sm}) {
+    @media (max-width: ${breakpoints.xs}) {
       position: static;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05), 0 2px 10px 0 rgba(0, 0, 0, 0.1);
       transform: translate(0, 0);

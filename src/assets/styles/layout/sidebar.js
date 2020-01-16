@@ -17,7 +17,7 @@ export const SideBar = styled.section`
 
 export const SideBarContent = styled.div`
   position: relative;
-  height: calc(100% - 8%);
+  height: calc(100% - 8.5%);
   z-index: 15;
   background-color: ${({ theme }) => theme.sidebar};
   transition: all 200ms;
@@ -82,10 +82,6 @@ export const HeaderTitle = styled.h4`
     margin: 0;
     font-size: ${fontSize.fontSizeMedium};
   }
-`;
-
-export const HeaderCategory = styled.div`
-  background-color: ${({ theme }) => theme.sidebar};
 `;
 
 export const CategoryTitle = styled.h5`
