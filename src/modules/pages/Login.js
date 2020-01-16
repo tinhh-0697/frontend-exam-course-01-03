@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import {
   LoginSection,
@@ -12,18 +12,21 @@ import {
 import { CHECK_LOGIN } from '../variable/LocalStorage';
 import { AuthContext } from '../../Auth';
 import firebase from '../../firebase';
+import { Alert } from 'reactstrap';
 
 const Login = (props) => {
   const { history } = props;
+  const [error, setError] = useState(false);
   const handleLogin = async (event) => {
     event.preventDefault();
     const { email, password } = event.target.elements;
-
-    try {
-      await firebase.auth().signInWithEmailAndPassword(email.value, password.value);
-      history.push('/');
-    } catch (error) {
-      alert(error);
+    if (email && password) {
+      try {
+        await firebase.auth().signInWithEmailAndPassword(email.value, password.value);
+        history.push('/');
+      } catch (error) {
+        setError(true);
+      }
     }
   };
 
@@ -40,11 +43,12 @@ const Login = (props) => {
 
   return (
     <LoginSection>
-      <LoginWrap md={6} lg={5}>
+      <LoginWrap md={6} lg={4}>
         <LoginForm>
           <LoginTitle>
             <h1>Login</h1>
           </LoginTitle>
+          {error ? <Alert color="danger">Invaid</Alert> : ''}
           <form onSubmit={handleLogin}>
             <LoginInput>
               <input
@@ -57,7 +61,7 @@ const Login = (props) => {
                 onChange={props.handleChange}
               />
               <label className="form-email">Email</label>
-              <TextError>{props.errors.email}</TextError>
+              {props.values.email ? <TextError>{props.errors.email}</TextError> : ''}
             </LoginInput>
             <LoginInput>
               <input
@@ -70,7 +74,7 @@ const Login = (props) => {
                 onChange={props.handleChange}
               />
               <label>Password</label>
-              <TextError>{props.errors.password}</TextError>
+              {props.values.password ? <TextError>{props.errors.password}</TextError> : ''}
             </LoginInput>
             <ButtonLogin color="success" type="submit">
               Sign In

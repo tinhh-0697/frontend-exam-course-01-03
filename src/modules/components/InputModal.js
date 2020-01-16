@@ -1,24 +1,8 @@
 import React from 'react';
-import { ModalInput, ModalRadio, ErrorText } from '../../assets/styles/pages/elements';
+import { ModalInput, ErrorText } from '../../assets/styles/pages/elements';
 
-export const InputName = (props) => {
-  const { handleChange, setName, setViews, onChooseStatus } = props;
-
-  const onCheck = (status) => {
-    if (typeof status === 'boolean') {
-      return status === true;
-    } else {
-      return status === 'true';
-    }
-  };
-
-  const onCheck1 = (status) => {
-    if (typeof status === 'boolean') {
-      return status === false;
-    } else {
-      return status === 'false';
-    }
-  };
+export const InputModal = (props) => {
+  const { handleChange, setName, setViews } = props;
 
   return (
     <>
@@ -36,7 +20,7 @@ export const InputName = (props) => {
           }}
         />
         <label>Name</label>
-        <ErrorText>{props.errors.name}</ErrorText>
+        {props.values.name ? <ErrorText>{props.errors.name}</ErrorText> : ''}
       </ModalInput>
       <ModalInput>
         <input
@@ -52,37 +36,8 @@ export const InputName = (props) => {
           }}
         />
         <label>Views</label>
-        <ErrorText>{props.errors.views}</ErrorText>
+        {props.values.views ? <ErrorText>{props.errors.views}</ErrorText> : ''}
       </ModalInput>
-      <ModalRadio>
-        <label className="modal-label__first">
-          <input
-            type="radio"
-            name="status"
-            onChange={(e) => {
-              handleChange(e);
-              onChooseStatus(e);
-            }}
-            value={true}
-            checked={onCheck(props.values.status)}
-          />
-          Show
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="status"
-            onChange={(e) => {
-              handleChange(e);
-              onChooseStatus(e);
-            }}
-            value={false}
-            checked={onCheck1(props.values.status)}
-          />
-          Hide
-        </label>
-        <ErrorText>{props.errors.status}</ErrorText>
-      </ModalRadio>
     </>
   );
 };

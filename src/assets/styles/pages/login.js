@@ -125,7 +125,7 @@ export const TextError = styled.span`
 export const ButtonLogin = styled.button`
   width: 100%;
   padding: 10px 0;
-  margin: 10px 5px 30px;
+  margin: 30px 5px 30px;
   color: ${color.colorWhite};
   font-family: ${fontFamily.fontLoginTitle};
   letter-spacing: 2px;
