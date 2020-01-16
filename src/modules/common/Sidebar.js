@@ -6,7 +6,6 @@ import {
   HeaderThumbnail,
   HeaderImgLogo,
   HeaderTitle,
-  HeaderCategory,
   SideBar,
   CategoryTitle,
   SideBarContent,
@@ -63,14 +62,14 @@ export const Sidebar = () => {
           </HeaderControl>
         </HeaderSetting>
         <Search siderbar={true} />
-        <HeaderCategory>
+        <div>
           <CategoryTitle>CATEGORY 1</CategoryTitle>
           <ListCategory list={listCategory1} />
-        </HeaderCategory>
-        <HeaderCategory>
+        </div>
+        <div>
           <CategoryTitle>CATEGORY 2</CategoryTitle>
           <ListCategory list={listCategory2} />
-        </HeaderCategory>
+        </div>
       </SideBarContent>
     </SideBar>
   );
