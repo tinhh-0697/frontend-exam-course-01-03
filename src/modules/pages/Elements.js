@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
-import { ElementsSection, ElementTable, ElementTools } from '../../assets/styles/pages/elements';
-import { TableElement } from '../components/TableElement';
-import { ModalButton } from '../components/ModalButton';
+import { ElementsSection, ElementTable, ElementTools } from 'styles/pages/elements';
+import { TableElement } from 'modules/components/TableElement';
+import { ModalButton } from 'modules/components/ModalButton';
 
 export const Elements = () => {
   const [modal, setModal] = useState(false);

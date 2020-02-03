@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import firebase from '../../firebase';
-import { ArticleItem } from './ArticleItem';
-import { TableInfo } from '../../assets/styles/components/TableInfo';
+import firebase from 'firebase';
+import ReactLoading from 'react-loading';
+import { ArticleItem } from 'modules/components/ArticleItem';
+import { TableInfo } from 'styles/components/TableInfo';
+import { color } from 'styles/variable';
 
 export const TableElement = () => {
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const db = firebase.firestore();
@@ -13,6 +16,7 @@ export const TableElement = () => {
       const articlesData = [];
       snapshot.forEach((doc) => articlesData.push({ ...doc.data(), id: doc.id }));
       setArticles(articlesData);
+      setLoading(false);
     });
   }, []);
 
@@ -26,11 +30,14 @@ export const TableElement = () => {
           <th>Options</th>
         </tr>
       </thead>
-      <tbody>
-        {articles.map((article, index) => (
-          <ArticleItem key={index} article={article} />
-        ))}
-      </tbody>
+      {loading && <ReactLoading type="bubbles" color={color.colorBrand} />}
+      {!loading && (
+        <tbody>
+          {articles.map((article, index) => (
+            <ArticleItem key={index} article={article} />
+          ))}
+        </tbody>
+      )}
     </TableInfo>
   );
 };

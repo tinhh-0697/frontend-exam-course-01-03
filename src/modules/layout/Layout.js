@@ -1,8 +1,8 @@
 import React from 'react';
-import Wrapper from './Wrapper';
-import withLoadLayout from './withLoadLayout';
+import Wrapper from 'modules/layout/Wrapper';
+import withLoadLayout from 'modules/layout/withLoadLayout';
 import { Redirect } from 'react-router-dom';
-import { CHECK_LOGIN } from '../variable/LocalStorage';
+import { CHECK_LOGIN } from 'modules/variable/LocalStorage';
 
 const ActiceWithLoadLayout = withLoadLayout(Wrapper);
 

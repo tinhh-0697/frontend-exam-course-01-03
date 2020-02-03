@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../common/Header';
-import { Sidebar } from '../common/Sidebar';
-import { Wrap, Main, MainContent } from '../../assets/styles/layout/wrapper';
-import { ToggleProvider } from '../context/ToggleSidebar';
+import Header from 'modules/common/Header';
+import { Sidebar } from 'modules/common/Sidebar';
+import { Wrap, Main, MainContent } from 'styles/layout/wrapper';
+import { ToggleProvider } from 'modules/context/ToggleSidebar';
 
 const Wrapper = (props) => {
   const {

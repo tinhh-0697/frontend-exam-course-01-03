@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderForm } from '../../assets/styles/layout/header';
+import { HeaderForm } from 'styles/layout/header';
 
 export const Search = (props) => {
   const { sidebar } = props;

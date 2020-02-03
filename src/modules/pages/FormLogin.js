@@ -1,6 +1,6 @@
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import Login from './Login';
+import Login from 'modules/pages/Login';
 
 export const FormLogin = withFormik({
   mapPropsToValues() {

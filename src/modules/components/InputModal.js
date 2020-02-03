@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModalInput, ErrorText } from '../../assets/styles/pages/elements';
+import { ModalInput, ErrorText } from 'styles/pages/elements';
 
 export const InputModal = (props) => {
   const { handleChange, setName, setViews } = props;

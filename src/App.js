@@ -10,7 +10,7 @@ import { Charts } from './modules/pages/Charts';
 import { FormLogin } from './modules/pages/FormLogin';
 import { AuthProvider } from './Auth';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from './assets/styles/components/theme';
+import { lightTheme, darkTheme } from './styles/components/theme';
 import { useDarkMode } from './useDarkMode';
 
 function App() {

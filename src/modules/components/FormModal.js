@@ -1,6 +1,6 @@
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import { InputModal } from './InputModal';
+import { InputModal } from 'modules/components/InputModal';
 
 export const FormModal = withFormik({
   mapPropsToValues({ name, views, status }) {

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
-import { ModalButton } from './ModalButton';
-import firebase from '../../firebase';
-import Check from '../../assets/images/check.png';
-import Uncheck from '../../assets/images/uncheck.png';
+import { ModalButton } from 'modules/components/ModalButton';
+import firebase from 'firebase';
+import Check from 'assets/images/check.png';
+import Uncheck from 'assets/images/uncheck.png';
 
 export const ArticleItem = (props) => {
   const { article } = props;
