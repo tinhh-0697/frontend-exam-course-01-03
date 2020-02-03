@@ -16,6 +16,7 @@ export const Wrap = styled.section`
 `;
 
 export const Main = styled.section`
+  overflow-y: auto;
   flex: 1;
 `;
 
