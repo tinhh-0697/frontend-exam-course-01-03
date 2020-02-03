@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Alert } from 'reactstrap';
-import firebase from '../../firebase';
-import { FormModal } from './FormModal';
-import { ModalRadio } from '../../assets/styles/pages/elements';
+import firebase from 'firebase';
+import { FormModal } from 'modules/components/FormModal';
+import { ModalRadio } from 'styles/pages/elements';
 
 export const ModalButton = (props) => {
   const { nameTemp, viewsTemp, statusTemp, id, className, modalParent, toggle, title } = props;
@@ -33,8 +33,12 @@ export const ModalButton = (props) => {
         }
       } else {
         // Add
-        db.collection('articles').add({ name, views: parseInt(views), status });
-        toggle();
+        if (parseInt(views) <= 1000000000) {
+          db.collection('articles').add({ name, views: parseInt(views), status });
+          toggle();
+        } else {
+          setError(true);
+        }
       }
       setError(false);
     } else {

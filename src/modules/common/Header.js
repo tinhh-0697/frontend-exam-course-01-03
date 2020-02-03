@@ -6,7 +6,7 @@ import {
   ControlButtonResponsive,
   ButtonSwitchTheme,
   HeaderControl,
-} from '../../assets/styles/layout/header';
+} from 'styles/layout/header';
 
 import { ToggleContext } from '../context/ToggleSidebar';
 import { Search } from './Search';

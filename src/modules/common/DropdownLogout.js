@@ -1,6 +1,6 @@
 import React from 'react';
-import { CHECK_LOGIN } from '../variable/LocalStorage';
-import firebase from '../../firebase';
+import { CHECK_LOGIN } from 'modules/variable/LocalStorage';
+import firebase from 'firebase';
 
 export const DropdownLogout = () => {
   const handerLogout = () => {

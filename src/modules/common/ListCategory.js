@@ -1,6 +1,6 @@
 import React from 'react';
-import { CategoryList } from '../../assets/styles/layout/sidebar';
-import { ListItem } from '../components/ListItem';
+import { CategoryList } from 'styles/layout/sidebar';
+import { ListItem } from 'modules/components/ListItem';
 
 export const ListCategory = (props) => {
   const { list } = props;

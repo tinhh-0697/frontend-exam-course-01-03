@@ -8,10 +8,10 @@ import {
   LoginTitle,
   LoginForm,
   LoginWrap,
-} from '../../assets/styles/pages/login';
-import { CHECK_LOGIN } from '../variable/LocalStorage';
-import { AuthContext } from '../../Auth';
-import firebase from '../../firebase';
+} from 'styles/pages/login';
+import { CHECK_LOGIN } from 'modules/variable/LocalStorage';
+import { AuthContext } from 'Auth';
+import firebase from 'firebase';
 import { Alert } from 'reactstrap';
 
 const Login = (props) => {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { CategoryItem, TitleItem } from '../../assets/styles/layout/sidebar';
+import { CategoryItem, TitleItem } from 'styles/layout/sidebar';
 import { Badge } from 'reactstrap';
 import styled from 'styled-components';
-import { breakpoints } from '../../assets/styles/mixins/responsive';
+import { breakpoints } from 'styles/mixins/responsive';
 export const ListItem = (props) => {
   const { link, itemName, noti, icon } = props;
 

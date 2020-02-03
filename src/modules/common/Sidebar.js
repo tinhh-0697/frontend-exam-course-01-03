@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import logo from '../../assets/images/logo.png';
-import { ListCategory } from './ListCategory';
+import logo from 'assets/images/logo.png';
+import { ListCategory } from 'modules/common/ListCategory';
 import {
   HeaderLogo,
   HeaderThumbnail,
@@ -9,7 +9,7 @@ import {
   SideBar,
   CategoryTitle,
   SideBarContent,
-} from '../../assets/styles/layout/sidebar';
+} from '../../styles/layout/sidebar';
 import {
   IconDashboard,
   IconHome,
@@ -22,10 +22,10 @@ import {
   IconPages,
   IconEcommerce,
 } from './Icons';
-import { ToggleContext } from '../context/ToggleSidebar';
-import { Search } from './Search';
-import { DropdownLogout } from './DropdownLogout';
-import { HeaderSetting, HeaderControl } from '../../assets/styles/layout/header';
+import { ToggleContext } from 'modules/context/ToggleSidebar';
+import { Search } from 'modules/common/Search';
+import { DropdownLogout } from 'modules/common/DropdownLogout';
+import { HeaderSetting, HeaderControl } from 'styles/layout/header';
 
 const listCategory1 = [
   { icon: IconDashboard, itemName: 'Dashboard', noti: 2, link: '/dashboard' },
