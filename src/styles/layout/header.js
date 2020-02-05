@@ -3,15 +3,16 @@ import { fontSize, fontFamily, color } from 'styles/variable';
 import { breakpoints } from 'styles/mixins/responsive';
 
 export const HeaderSearch = styled.div`
+  position: fixed;
+  top: 0;
   display: flex;
+  width: calc(100% - 350px);
   height: 82px;
   background-color: ${({ theme }) => theme.header};
   box-shadow: 0 0 54px rgba(0, 0, 0, 0.09);
   transition: background-color 200ms;
 
   @media (max-width: ${breakpoints.md}) {
-    position: fixed;
-    top: 0;
     width: 100%;
     background-color: ${color.colorBrand};
   }

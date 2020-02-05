@@ -21,8 +21,8 @@ export const Main = styled.section`
 `;
 
 export const MainContent = styled.div`
+  margin-top: 82px;
   @media (max-width: ${breakpoints.md}) {
     height: ${(props) => (props.path ? '100%' : '100vh')};
-    margin-top: 82px;
   }
 `;
