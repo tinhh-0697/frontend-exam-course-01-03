@@ -16,13 +16,12 @@ export const TableInfo = styled(Table)`
         border: 0;
 
         :nth-child(1) {
-          width: 382px;
+          width: 600px;
           padding-left: 72px;
         }
 
         :nth-child(2) {
-          width: 313px;
-          /* width: 480px; */
+          width: 200px;
         }
 
         :nth-child(3) {
